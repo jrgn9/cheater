@@ -20,9 +20,6 @@ chmod u+x install.sh
 
 ./install.sh
 ```
-
-If you rather want to do a manual install follow the guide below. 
-
 ### Manual install
 If you want to manually install the program follow these steps:
 
@@ -32,15 +29,27 @@ If you want to manually install the program follow these steps:
 4. **Give cheat the right permissions:** `sudo chmod u+x /home/$USER/.cheater/program_files/cheat`
 5. **Check if it is installed correctly (you might have to restart your shell):** `cheat -h`
 
-
-
 ## 📝 How to use
 
-**Usage:**
 `cheat [name]` 
+
+This command prints the cheat sheet in your terminal. For example `cheat vim` will print your vim cheat sheet.
+
 `cheat [option] [name]`
 
+Choose an option (add/edit/delete) and the name of the cheat sheet as a second argument. If you don't provide a name you will be prompted for one.
+
+Add your own cheat sheets by using the `cheater --add` command. This creates and opens the cheat sheet in your default text editor (or nano as fallback).
+
+Edit a cheat sheets by using the `cheater --edit` command. This opens a cheat sheet in your default text editor for editing.
+
+Delete a cheat sheet by using the `cheater --delete` command. This removes a specified cheat sheet.
+
+You can of course also add, delete and edit the files manually by going to the cheat_sheets directory.
+
 ### 🧰 Options
+A list of all the options and a description of what they do.
+
 | Short option | Long option  | Secondary options        | Description                                                                                                                                                                              |
 | ------------ | ------------ | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |     [file_name]         |              |                          | No options: Prints the cheat sheet with the provided file name |
@@ -49,9 +58,6 @@ If you want to manually install the program follow these steps:
 | \-e          | \--edit    | [file_name]                 | Opens the cheat in your default text editor for editing. |
 | \-d          | \--delete      | [file_name]           | Delete a cheat sheet. Provide name for the cheat. If there are no second argument, you will be prompted for a name    |
 | \-v          | \--version     |  | Prints version of the program |
-
-### Examples:
-
 
 ### 🚮 Uninstall
 I haven't created a script to do the uninstall. However, you simply need to delete the .cheater directory in home and remove the cheat symlink in /usr/local/bin
