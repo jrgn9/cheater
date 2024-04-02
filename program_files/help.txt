@@ -1,0 +1,18 @@
+Cheater is a simple program for printing and managing cheat sheets to print in terminal 
+
+Usage:	cheat [option/name] [optional name]
+
+Options:
+-h	--help		        Display this help message
+
+[name]                  Prints the cheat sheet with that name
+
+-a  --add       [name]  Add a new cheat sheet. Provide name for the cheat.
+			            If there are no second argument, you will be prompted for a name
+
+-e	--edit      [name]	Opens the cheat in your default text editor for editing.
+
+-d	--delete    [name]	Delete a cheat sheet. Provide name for the cheat.
+			            If there are no second argument, you will be prompted for a name
+
+-v  --version           Prints version of the program

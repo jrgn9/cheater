@@ -1,0 +1,149 @@
+#! /bin/bash
+
+# Path for the .cheater folder with program files
+program_folder="$HOME/.cheater/program_files"
+
+# Path for the cheat sheet folder
+sheet_folder="$HOME/.cheater/cheat_sheets"
+
+# Use default text editor with nano as fallback
+text_editor="${EDITOR:-nano}"
+
+add_sheet() {
+    # Check if user has provided name as argument
+    if [ -z "$1" ]
+    then
+        # Prompt user for name
+        read -rp "Enter name for new cheat sheet: " filename
+    else
+        filename="$1"
+    fi
+
+    # Error handling
+    if [ -z "$filename" ]
+    then
+        echo "Error: No filename provided. Exiting"
+        exit 1
+    elif [ -e "$sheet_folder"/"$filename" ]
+    then
+        echo "Error: There is already a cheat sheet with that name"
+        read -rp "Do you want to overwrite this file and delete its content? y/n: " answer
+
+        if [[ ! "$answer" =~ ^[Yy](es)?$ ]]
+		then
+            echo "No cheat sheet created. Exiting"
+            exit 1
+        fi
+    fi
+
+    # Create file with users default editor
+    $text_editor "$sheet_folder"/"$filename"
+    exit 0
+}
+
+edit_sheet() {
+    # Check if user has provided name as argument
+    if [ -z "$1" ]
+    then
+        # Prompt user for name
+        read -rp "Enter name for cheat sheet to edit: " filename
+    else
+        filename="$1"
+    fi
+
+    # Error handling
+    if [ -z "$filename" ]
+    then
+        echo "Error: No filename provided. Exiting"
+        exit 1
+    elif [ ! -e "$sheet_folder"/"$filename" ]
+    then
+        echo "Error: Could not find a cheat sheet with the name $filename. Exiting"
+        exit 1
+    fi
+    
+    # Open file with users default editor
+    $text_editor "$sheet_folder"/"$filename"
+    exit 0
+}
+
+delete_sheet() {
+    # Check if user has provided name as argument
+    if [ -z "$1" ]
+    then
+        # Prompt user for name
+        read -rp "Enter name for cheat sheet to delete: " filename
+    else
+        filename="$1"
+    fi
+
+    # Error handling
+    if [ -z "$filename" ]
+    then
+        echo "Error: No filename provided. Exiting"
+        exit 1
+    elif [ ! -e "$sheet_folder"/"$filename" ]
+    then
+        echo "Error: Could not find a cheat sheet with the name $filename. Exiting"
+        exit 1
+    fi
+
+    # Delete cheat sheet verbose and with confirmation, based on user input
+    rm -iv "$sheet_folder"/"$filename"
+    exit 0
+}
+
+print_sheet() {
+    # Check if user has provided name as argument
+    if [ -z "$1" ]
+    then
+        # Prompt user for name
+        read -rp "Enter name for cheat sheet to print: " filename
+    else
+        filename="$1"
+    fi
+
+    # Error handling
+    if [ -z "$filename" ]
+    then
+        echo "No filename provided."
+        exit 1
+    elif [ ! -e "$sheet_folder"/"$filename" ]
+    then
+        echo "Error: Could not find a cheat sheet with the name $filename."
+        exit 1
+    fi
+
+    # Print cheat sheet based on user input
+    cat "$sheet_folder"/"$filename"
+    exit 0
+}
+
+# Case check for meta flags
+case $1 in
+    --help|-h)
+		# Prints help message and exits
+		cat "$program_folder/help.txt"
+		exit 0
+        ;;
+    --version|-v)
+		# Prints about text and exits
+		cat "$program_folder/about.txt"
+		exit 0
+        ;;
+    --add|-a)
+        add_sheet "$2"
+        ;;
+    --edit|-e)
+        edit_sheet "$2"
+        ;;
+    --delete|-d)
+        delete_sheet "$2"
+        ;;
+    *)
+        print_sheet "$1"
+        ;;
+esac
+
+
+
