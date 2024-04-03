@@ -98,7 +98,6 @@ Cheater is made by Jørgen Skontorp.
 
 ## ✅ Todo
 - Thoroughly test the program for bugs
-- Print help when no options or names are given
-- Import function (and possibly export/backup to save a copy of the sheets)
 - Add example cheat sheets (vim, tmux)
-- Create logo and add to readme
+- Release first version
+- Import function (and possibly export/backup to save a copy of the sheets)
