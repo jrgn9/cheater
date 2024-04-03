@@ -16,3 +16,4 @@ Options:
 			            If there are no second argument, you will be prompted for a name
 
 -v  --version           Prints version of the program
+
