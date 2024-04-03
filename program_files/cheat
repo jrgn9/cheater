@@ -121,7 +121,7 @@ print_sheet() {
 
 # Case check for meta flags
 case $1 in
-    --help|-h)
+    ''|--help|-h)
 		# Prints help message and exits
 		cat "$program_folder/help.txt"
 		exit 0
