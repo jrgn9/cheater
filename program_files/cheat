@@ -9,6 +9,8 @@ sheet_folder="$HOME/.cheater/cheat_sheets"
 # Use default text editor with nano as fallback
 text_editor="${EDITOR:-nano}"
 
+version="v1.0.0"
+
 add_sheet() {
     # Check if user has provided name as argument
     if [ -z "$1" ]
@@ -127,10 +129,15 @@ case $1 in
 		exit 0
         ;;
     --version|-v)
+        # Prints version number and exits
+        echo "Version: $version"
+        ;;
+    --about)
 		# Prints about text and exits
 		cat "$program_folder/about.txt"
 		exit 0
         ;;
+    
     --add|-a)
         add_sheet "$2"
         ;;

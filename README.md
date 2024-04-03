@@ -81,6 +81,7 @@ A list of all the options and a description of what they do. If you don't provid
 | \-e          | \--edit    | [file_name]                 | Opens the cheat in your default text editor for editing. |
 | \-d          | \--delete      | [file_name]           | Delete a cheat sheet. Provide name for the cheat. If there are no second argument, you will be prompted for a name    |
 | \-v          | \--version     |  | Prints version of the program |
+|           | \--about     |  | Prints the about page for the program |
 
 ## 🚮 Uninstall
 I haven't created a script to do the uninstall. However, you simply need to delete the .cheater directory in home and remove the cheat symlink in /usr/local/bin
