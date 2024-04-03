@@ -3,14 +3,32 @@ A simple program for printing and managing your own cheat sheets to print in ter
 
 ## ⚡ Quick start
 
-Gotta go fast
+For help and list over all functionality:
+
+`cheat -h`
+
+To print the vim example cheat sheet:
+
+`cheat vim`
+
+To add your own git cheat sheet:
+
+`cheat --add git`
+
+Delete the example tmux cheat sheet:
+
+`cheat --delete tmux`
+
+Edit the vim cheat sheet to add more commands:
+
+`cheat --edit vim` 
 
 ## 📥 Install
 Download the [latest version](https://github.com/jrgn9/cheater/releases/latest) or use git to clone the repo.
 
 Run the `install.sh` script with sudo to automate the install. The script requires curl and rsync to function. It needs sudo privileges to symlink the program to /usr/local/bin. You can also install it manually.
 
-### Script install
+### 📜 Script install
 The script requires rsync and curl to work properly!
 
 Make sure the install script have execution rights, then run it:
@@ -20,7 +38,7 @@ chmod u+x install.sh
 
 ./install.sh
 ```
-### Manual install
+### 💪 Manual install
 If you want to manually install the program follow these steps:
 
 1. **Create a .cheater directory in /home/$USER:** `mkdir /home/$USER/.cheater`
@@ -47,8 +65,10 @@ Delete a cheat sheet by using the `cheater --delete` command. This removes a spe
 
 You can of course also add, delete and edit the files manually by going to the cheat_sheets directory.
 
+**Note:** I don't use file extensions for my cheat sheets. If you do, you have to write the extension as a part of the name when invoking the sheet. For example, neovim.txt needs to be invoked with `cheat --edit neovim.txt`. I recommend not using file extensions.
+
 ### 🧰 Options
-A list of all the options and a description of what they do.
+A list of all the options and a description of what they do. If you don't provide a file name as an argument, you will be prompted for one. 
 
 | Short option | Long option  | Secondary options        | Description                                                                                                                                                                              |
 | ------------ | ------------ | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -59,7 +79,7 @@ A list of all the options and a description of what they do.
 | \-d          | \--delete      | [file_name]           | Delete a cheat sheet. Provide name for the cheat. If there are no second argument, you will be prompted for a name    |
 | \-v          | \--version     |  | Prints version of the program |
 
-### 🚮 Uninstall
+## 🚮 Uninstall
 I haven't created a script to do the uninstall. However, you simply need to delete the .cheater directory in home and remove the cheat symlink in /usr/local/bin
 
 ```
@@ -71,3 +91,8 @@ rm /usr/local/bin/cheat
 This project is licensed with [GNU General Public License v3](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
 Cheater is made by Jørgen Skontorp.
+
+## ✅ Todo
+- Thoroughly test the program for bugs
+- Print help when no options or names are given
+- Import function (and possibly export/backup to save a copy of the sheets)
