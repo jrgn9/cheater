@@ -15,3 +15,8 @@
 |  ~~  ~     ~~~    ~~ |
 |______________________|
 
+Cheater is a simple program for printing and managing cheat sheets to print in terminal 
+
+Please use Github for reporting bugs and to find the latest version:
+https://github.com/jrgn9/cheater/releases
+
