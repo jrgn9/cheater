@@ -41,10 +41,11 @@ chmod u+x install.sh
 ./install.sh
 ```
 ### 💪 Manual install
-If you want to manually install the program follow these steps:
+If you want to manually inst--exclude="./.git"all the program follow these steps:
 
 1. **Create a .cheater directory in /home/$USER:** `mkdir /home/$USER/.cheater`
-2. **Copy the contents of the cheater directory with rsync or cp:** `rsync/cp .* /home/$USER/.cheater`
+2. **Copy the contents of the cheater directory with rsync or cp (do not copy the .git directory):** `rsync/cp .* /home/$USER/.cheater`
+   **Tip:** rsync allows to exclude directories. Use `rsync --exclude=".git"`
 3. **Symlink the cheat program to $PATH. I prefer /usr/local/bin:** `sudo ln -s /home/$USER/.cheater/program_files/cheat /usr/local/bin/cheat`
 4. **Give cheat the right permissions:** `sudo chmod u+x /home/$USER/.cheater/program_files/cheat`
 5. **Check if it is installed correctly (you might have to restart your shell):** `cheat -h`
@@ -98,6 +99,5 @@ Cheater is made by Jørgen Skontorp.
 
 ## ✅ Todo
 - Thoroughly test the program for bugs
-- Add example cheat sheets (vim, tmux)
 - Release first version
 - Import function (and possibly export/backup to save a copy of the sheets)
