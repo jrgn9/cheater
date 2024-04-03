@@ -41,7 +41,7 @@ chmod u+x install.sh
 ./install.sh
 ```
 ### 💪 Manual install
-If you want to manually inst--exclude="./.git"all the program follow these steps:
+If you want to manually install the program follow these steps:
 
 1. **Create a .cheater directory in /home/$USER:** `mkdir /home/$USER/.cheater`
 2. **Copy the contents of the cheater directory with rsync or cp (do not copy the .git directory):** `rsync/cp .* /home/$USER/.cheater`
@@ -99,6 +99,4 @@ This project is licensed with [GNU General Public License v3](https://www.gnu.or
 Cheater is made by Jørgen Skontorp.
 
 ## ✅ Todo
-- Thoroughly test the program for bugs
-- Release first version
 - Import function (and possibly export/backup to save a copy of the sheets)
