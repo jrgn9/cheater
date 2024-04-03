@@ -66,9 +66,9 @@ echo "Moving program files to $USER_HOME/.cheater"
 if [ "$exists" = "y" ]
 then
     
-    rsync -av --exclude="./cheat_sheets" . /"$USER_HOME"/.cheater/
+    rsync -av --exclude="./cheat_sheets" --exclude=".git" . /"$USER_HOME"/.cheater/
 else
-    rsync -av . /"$USER_HOME"/.cheater/
+    rsync -av --exclude=".git" . /"$USER_HOME"/.cheater/
 fi
 
 # Change the ownership from root (because of sudo) to the user
@@ -85,6 +85,6 @@ then
     rm /usr/local/bin/cheat
 fi
 
-ln -s "$USER_HOME"/.cheater/cheat /usr/local/bin
+ln -s "$USER_HOME"/.cheater/program_files/cheat /usr/local/bin
 
 echo "Installation complete. Run 'cheat -h' in terminal for help or read the documentation"
