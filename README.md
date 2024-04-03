@@ -72,7 +72,7 @@ A list of all the options and a description of what they do. If you don't provid
 
 | Short option | Long option  | Secondary options        | Description                                                                                                                                                                              |
 | ------------ | ------------ | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|     [file_name]         |              |                          | No options: Prints the cheat sheet with the provided file name |
+|     [file_name]         |              |                          | No options only name: Prints the cheat sheet with the provided file name |
 | \-h          | \--help      |                          | Display help message                                                                                                                                                                     |
 | \-a          | \--add       |  [file_name]            | Add a new cheat sheet. Provide name for the cheat. If there are no second argument, you will be prompted for a name |
 | \-e          | \--edit    | [file_name]                 | Opens the cheat in your default text editor for editing. |
@@ -96,3 +96,5 @@ Cheater is made by Jørgen Skontorp.
 - Thoroughly test the program for bugs
 - Print help when no options or names are given
 - Import function (and possibly export/backup to save a copy of the sheets)
+- Add example cheat sheets (vim, tmux)
+- Create logo and add to readme
