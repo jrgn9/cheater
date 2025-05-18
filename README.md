@@ -14,6 +14,3 @@ This project is licensed with [GNU General Public License v3](https://www.gnu.or
 [Writing icons created by Smashicons - Flaticon](https://www.flaticon.com/free-icons/writing)
 
 Cheater is made by Jørgen Skontorp.
-
-## ✅ Todo
-- Import function (and possibly export/backup to save a copy of the sheets)
